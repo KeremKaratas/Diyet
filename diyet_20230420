@@ -91,6 +91,7 @@ function onLoad() {
         <details>
         <summary> Ağırlık </summary> 
             <ul id="afternoonWeight">
+            protein bar (45g)
             </ul>
         </details>
     </blockquote>
