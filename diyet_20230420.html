@@ -44,10 +44,9 @@
                     data-dark-mode-theme="dark"
                     data-light-mode-theme="default"></span>
                 <h1 id="kerem-diyet">Kerem Diyet</h1>
-<!--  -->
-<body onload="showContent()">
+<body onload="onLoad()">
+<!-- MEAL -->
 <template>
-<ul>
     <li>
     <select>
         <option select> 250g kurubaklagil</option>
@@ -60,99 +59,110 @@
     <li>150g sebze (et/tavuk yanına)</li>
     <li>165g pilav</li>
     <li>200g yoğurt</li>
-</ul>
 </template>
-<!--  -->
+<!-- SMOOTHIE -->
+<template>
+    <li>1/2 muz</li>
+    <li>200ml badem sütü</li>
+    <li>1 ölçek whey</li>
+</template>
+<!-- SCRIPT -->
 <script>
-function showContent() {
+function onLoad() {
     var meal = document.getElementsByTagName("template")[0];
+    var smoothie = document.getElementsByTagName("template")[1];
+    document.getElementById("morningRun")
+        .appendChild(smoothie.content.cloneNode(true));
     document.getElementById("lunchRun")
         .appendChild(meal.content.cloneNode(true));
+    document.getElementById("afternoonRun")
+        .appendChild(smoothie.content.cloneNode(true));
     document.getElementById("eveningRun")   
+        .appendChild(meal.content.cloneNode(true));
+    document.getElementById("morningWeight")
+        .appendChild(smoothie.content.cloneNode(true));
+    document.getElementById("lunchWeight")
+        .appendChild(meal.content.cloneNode(true));
+    document.getElementById("eveningWeight")   
         .appendChild(meal.content.cloneNode(true));
 }
 </script>
-<!--  -->
+<!-- MORNING -->
 <details>
 <summary><b>Sabah</b></summary> 
     <blockquote> 
         <details> 
         <summary> Koşu (smoothie) </summary> 
-            <ul>
-            <li>1/2 muz</li>
-            <li>200ml badem sütü</li>
-            <li>1 ölçek whey</li>
+            <ul id="morningRun">
             </ul>
         </details>
         <!--  -->
         <details>
         <summary> Ağırlık </summary> 
-        <blockquote>
-        </blockquote>
+            <ul id="morningWeight">
+            </ul>
         </details>
     </blockquote>
 </details>
-<!--  -->
+<!-- LUNCH -->
 <details>
 <summary><b>Öğle</b></summary> 
     <blockquote> 
         <details> 
         <summary> Koşu </summary> 
-        <p id="lunchRun">
-        </p>
+            <ul id="lunchRun">
+            </ul>
         </details>
         <!--  -->
         <details>
         <summary> Ağırlık </summary> 
-        <blockquote>
-        </blockquote>
+            <ul id="lunchWeight">
+            </ul>
         </details>
     </blockquote>
 </details>
-<!--  -->
+<!-- AFTERNOON -->
 <details>
 <summary><b>İkindi</b></summary> 
     <blockquote> 
         <details> 
         <summary> Koşu (smoothie+Kreatin) </summary>
-            <ul>
-            <li>1/2 muz</li>
-            <li>200ml badem sütü</li>
-            <li>1 ölçek whey</li>
+            <ul id="afternoonRun">
             <li>2g kreatin</li>
             </ul>
         </details>
         <!--  -->
         <details>
         <summary> Ağırlık </summary> 
+            <ul id="afternoonWeight">
+            </ul>
         </details>
     </blockquote>
 </details>
-<!--  -->
+<!-- DINNER -->
 <details>
 <summary><b>Akşam</b></summary> 
     <blockquote> 
         <details> 
         <summary> Koşu </summary> 
-        <p id="eveningRun">
-        </p>
+        <ul id="eveningRun">
+        </ul>
         </details>
         <!--  -->
         <details>
         <summary> Ağırlık </summary> 
-        <blockquote>
-        </blockquote>
+        <ul id="eveningWeight">
+        </ul>
         </details>
     </blockquote>
 </details>
-<!--  -->
+<!-- NIGHT -->
 <details>
 <summary> <b>Gece</b> </summary> 
     <blockquote> 
         <details> 
-        <summary> Koşu (smoothie) </summary>
-        Porridge 
-        <ul>
+        <summary> Koşu (Porridge) </summary>
+        <ul id=nightRun>
         <li>250ml badem sütü</li>
         <li>15g hindistan cevizi unu</li>
         <li>20g yulaf</li>
@@ -161,13 +171,15 @@ function showContent() {
         </details>
         <!--  -->
         <details>
-        <summary> Ağırlık </summary> 
-        <blockquote>
-        </blockquote>
+        <summary> Ağırlık (Elma & Fıstık ezmesi) </summary> 
+        <ul id="nightWeight">
+        <li>1 yeşil elma</li>
+        <li>40g fıstık ezmesi</li>
+        </ul>
         </details>
     </blockquote>
 </details>
-<!--  -->
+<!-- SPECIAL -->
 <b> Koşu Sonrası: </b> 500ml çikolatalı süt ve protein bar
 
         
